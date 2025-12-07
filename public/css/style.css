@@ -1,0 +1,13 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+footer{
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.bg-red{
+  background-color: #DB2029;
+}
+
+.text-red{
+  color: #DB2029;
+}
