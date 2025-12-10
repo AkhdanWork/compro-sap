@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Set Manrope sebagai default font */
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
+/* Atau apply ke semua element */
+* {
+    font-family: 'Manrope', sans-serif;
+}

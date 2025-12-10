@@ -1,8 +1,9 @@
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+body, html {
+    font-family: 'Manrope', sans-serif;
 }
-footer{
-  font-family: 'Plus Jakarta Sans', sans-serif;
+
+* {
+    font-family: 'Manrope', sans-serif;
 }
 .bg-red{
   background-color: #DB2029;

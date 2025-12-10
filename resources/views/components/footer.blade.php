@@ -1,9 +1,5 @@
-<footer class="bg-red text-white p-6 lg:p-12">
+<footer class="bg-white text-black p-6 lg:p-12">
       <div class="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
-        <div class="flex flex-col items-center">
-          <img src="{{asset ('img/logo_putih.jpg')}}" class="w-24 lg:w-36 rounded" alt="">
-          <div class="text-md mt-4 font-bold text-center">PT Setia Alfa Perkasa Enterprise</div>
-        </div>
         <div>
           <div class="text-xl font-bold text-center lg:text-left">About Us</div>
           <div class="text-sm mt-2 text-center lg:text-left">
@@ -26,7 +22,8 @@
             <li><a href="#"><i class="bi bi-globe2"></i> www.sap-enterprise.com</a></li>
           </ul>
         </div>
-        <div class="col-span-1 lg:col-span-3 text-center mt-4 lg:mt-0">
+        <div class="flex flex-col items-center col-span-1 lg:col-span-3 text-center mt-4 lg:mt-0">
+          <img src="{{asset ('img/logo-expand.png')}}" class="w-24 lg:w-36 rounded" alt="">
           copyright© PT Setia Alfa Perkasa Enterprise 2024
         </div>
       </div>

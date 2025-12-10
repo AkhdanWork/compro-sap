@@ -58,5 +58,32 @@
     section.className = 'section--purple wow fadeInDown';
     this.parentNode.insertBefore(section, this);
   };
+  function toggleAccordion(header) {
+      const item = header.parentElement;
+      const content = item.querySelector('.accordion-content');
+      const allItems = document.querySelectorAll('.accordion-item');
+      
+      allItems.forEach(otherItem => {
+          if (otherItem !== item) {
+              const otherContent = otherItem.querySelector('.accordion-content');
+              const otherHeader = otherItem.querySelector('.accordion-header h3');
+              otherContent.style.display = 'none';
+              otherHeader.classList.remove('font-bold', 'text-gray-900');
+              otherHeader.classList.add('font-semibold', 'text-gray-700');
+          }
+      });
+      
+      const currentHeader = header.querySelector('h3');
+      
+      if (content.style.display === 'none') {
+          content.style.display = 'block';
+          currentHeader.classList.remove('font-semibold', 'text-gray-700');
+          currentHeader.classList.add('font-bold', 'text-gray-900');
+      } else {
+          content.style.display = 'none';
+          currentHeader.classList.remove('font-bold', 'text-gray-900');
+          currentHeader.classList.add('font-semibold', 'text-gray-700');
+      }
+  }
 </script>
 <script src="{{ asset('js/jquery.js') }}"></script>
