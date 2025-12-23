@@ -1,10 +1,10 @@
 <x-app-layout>
-<section class="bg-cover bg-center min-h-screen bg-gray-700 bg-blend-multiply flex items-end" style="background-image: url('{{ asset('img/event/peresmianinpres-min.jpg') }}');">
+<section class="bg-cover bg-center min-h-screen bg-gray-500 bg-blend-multiply flex items-end" style="background-image: url('{{ asset('img/event/peresmianinpres-min.jpg') }}');">
     <div class="px-4 mx-auto container w-9/12 py-16 lg:py-24">
         <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-end">
             
             <div class="space-y-6">
-                <h1 class="text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight leading-tight text-white">
+                <h1 style="line-height:1.25" class="text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-tight text-white">
                     One Stop<br>
                     Event Solution
                 </h1>
@@ -40,20 +40,44 @@
 <section>
   <div class="bg-white pt-6" id="partners">
     <div class="container w-9/12 mx-auto wow fadeInDown">
-      <h5 class="text-xl lg:text-2xl text-center text-black font-bold wow fadeInTop">Trusted by Leading Brands and Institutions</h5>
+      <h5 class="text-lg lg:text-2xl text-center text-black font-bold wow fadeInTop">Trusted by Leading Brands and Institutions</h5>
       <div id="default-carousel" class="container mx-auto pt-6" data-carousel="slide">
-        <div class="relative h-48 md:h-28 overflow-hidden rounded-lg">
-          @foreach (array_chunk($carouselPartnerItems, 8) as $carouselChunk)
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-              <div class="grid lg:grid-cols-8 grid-cols-4 gap-4">
-                @foreach ($carouselChunk as $item)
-                  <div class="flex justify-center items-center">
-                    <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['title'] }}" class="h-12 lg:h-16 object-contain transform hover:scale-105 motion-reduce:transform-none">
-                  </div>
+        <div class="relative h-20 lg:h-48 overflow-hidden rounded-lg">
+          <div class="block lg:hidden">
+                @foreach (array_chunk($carouselPartnerItems, 4) as $carouselChunk)
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="grid grid-cols-4 gap-4">
+                        @foreach ($carouselChunk as $item)
+                        <div class="flex justify-center items-center">
+                            <img
+                            src="{{ asset('storage/' . $item['image']) }}"
+                            alt="{{ $item['title'] }}"
+                            class="h-10 object-contain"
+                            >
+                        </div>
+                        @endforeach
+                    </div>
+                    </div>
                 @endforeach
-              </div>
+          </div>
+        <div class="hidden lg:block">
+        @foreach (array_chunk($carouselPartnerItems, 8) as $carouselChunk)
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="grid grid-cols-8 gap-6">
+                @foreach ($carouselChunk as $item)
+                <div class="flex justify-center items-center">
+                    <img
+                    src="{{ asset('storage/' . $item['image']) }}"
+                    alt="{{ $item['title'] }}"
+                    class="h-16 object-contain"
+                    >
+                </div>
+                @endforeach
             </div>
-          @endforeach
+            </div>
+        @endforeach
+        </div>
+
         </div>
       </div>
     </div>
@@ -153,7 +177,7 @@
                 <p class="text-gray-400 font-semibold text-sm uppercase tracking-widest">OUR VALUES</p>
             </div>
 
-            <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 class="text-3xl lg:text-5xl font-medium text-gray-900 mb-6">
                 The Principles That Shape Our Work
             </h2>
 
@@ -162,7 +186,7 @@
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
             <div class="group border border-gray-100 rounded-2xl p-6 hover:border-red-300 transition-all duration-300 hover:shadow-lg">
                 <div class="w-16 h-16 mb-6 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transform group-hover:-translate-y-1 transition-all duration-300 bg-gradient-to-b from-red-400 via-red-600 to-red-700 group-hover:from-red-600 group-hover:via-red-700 group-hover:to-red-800">
                     <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -358,12 +382,12 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 lg:gap-12 mb-6">
-            <div class="group border-2 border-gray-200 rounded-2xl p-0 hover:border-red-300 transition-all duration-300 hover:shadow-lg">
+            <div class="group border-2 border-gray-100 rounded-2xl p-0 hover:border-red-300 transition-all duration-300 hover:shadow-lg">
                 <div class="p-6">
                     <img src="{{ asset('img/team/team4.jpg') }}" alt="End-to-End Event Capability" class="rounded-2xl w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300">
                 </div>
 
-                <div class="border-t border-gray-200"></div>
+                <div class="border-t border-gray-100"></div>
 
                 <div class="p-6">
                     <h3 class="text-2xl lg:text-3xl font-medium text-gray-900 mb-3">
@@ -375,7 +399,7 @@
                 </div>
             </div>
 
-            <div class="group border-2 border-gray-200 rounded-2xl p-0 hover:border-red-300 transition-all duration-300 hover:shadow-lg overflow-hidden">
+            <div class="group border-2 border-gray-100 rounded-2xl p-0 hover:border-red-300 transition-all duration-300 hover:shadow-lg overflow-hidden">
 
                 <div class="p-6">
                     <img src="{{ asset('img/team/team4.jpg') }}" 
@@ -383,7 +407,7 @@
                         class="rounded-2xl w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300">
                 </div>
 
-                <div class="border-t border-gray-200"></div>
+                <div class="border-t border-gray-100"></div>
 
                 <div class="p-6">
                     <h3 class="text-2xl lg:text-3xl font-medium text-gray-900 mb-3">
@@ -413,7 +437,7 @@
                 </a>
             </div>
 
-            <div class="border-2 border-gray-200 rounded-2xl p-6 hover:border-red-300 transition-all duration-300 hover:shadow-lg">
+            <div class="border-2 border-gray-100 rounded-2xl p-6 hover:border-red-300 transition-all duration-300 hover:shadow-lg">
                 <div class="rounded-2xl overflow-hidden shadow-xl">
                     <img src="{{ asset('img/team/team4.jpg') }}" alt="Proven Track Record" class="w-full h-96 object-cover">
                 </div>
@@ -503,7 +527,7 @@
                 </p>
 
                 <div class="mt-auto">
-                    <a href="#contact" class="inline-flex items-center justify-center px-4 py-1 bg-red-50 text-red-500 font-semibold text-base rounded-full hover:bg-red-700 hover:text-white transition-all duration-300 transform hover:-translate-y-1 group">
+                    <a href="#contact" class="inline-flex items-center justify-center px-4 py-1 text-red-500 font-semibold text-base rounded-full hover:bg-red-700 hover:text-white transition-all duration-300 transform hover:-translate-y-1 group">
                         View Project
                         <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">

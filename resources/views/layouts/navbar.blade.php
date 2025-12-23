@@ -19,23 +19,20 @@
         <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-white font-semibold' : 'text-gray-200' }} hover:text-white px-4 py-2 transition">
             Home
         </a>
+        <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'text-white font-semibold' : 'text-gray-200' }} hover:text-white px-4 py-2 transition">
+            About
+        </a>
         <a href="{{ route('service') }}" class="{{ request()->routeIs('service') ? 'text-white font-semibold' : 'text-gray-200' }} hover:text-white px-4 py-2 transition">
             Services
         </a>
         <a href="{{ route('projects') }}" class="{{ request()->routeIs('projects') ? 'text-white font-semibold' : 'text-gray-200' }} hover:text-white px-4 py-2 transition">
-            Projects
-        </a>
-        <a href="#" class="text-gray-200 hover:text-white px-4 py-2 transition">
-            Catalog
-        </a>
-        <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'text-white font-semibold' : 'text-gray-200' }} hover:text-white px-4 py-2 transition">
-            About Us
+            Portfolio
         </a>
         <a href="{{ route('team') }}" class="{{ request()->routeIs('team') ? 'text-white font-semibold' : 'text-gray-200' }} hover:text-white px-4 py-2 transition">
             Team
         </a>
-        <a href="{{ route('download') }}" class="{{ request()->routeIs('download') ? 'text-white font-semibold' : 'text-gray-200' }} hover:text-white px-4 py-2 transition">
-            Download
+        <a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'text-white font-semibold' : 'text-gray-200' }} hover:text-white px-4 py-2 transition">
+            Contact
         </a>
     </div>
 
@@ -99,23 +96,20 @@
             <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-white font-bold' : 'text-gray-200' }} text-xl hover:text-white transition">
                 Home
             </a>
+            <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'text-white font-bold' : 'text-gray-200' }} text-xl hover:text-white transition">
+                About
+            </a>
             <a href="{{ route('service') }}" class="{{ request()->routeIs('service') ? 'text-white font-bold' : 'text-gray-200' }} text-xl hover:text-white transition">
                 Services
             </a>
             <a href="{{ route('projects') }}" class="{{ request()->routeIs('projects') ? 'text-white font-bold' : 'text-gray-200' }} text-xl hover:text-white transition">
-                Projects
-            </a>
-            <a href="#" class="text-gray-200 text-xl hover:text-white transition">
-                Catalog
-            </a>
-            <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'text-white font-bold' : 'text-gray-200' }} text-xl hover:text-white transition">
-                About Us
+                Portfolio
             </a>
             <a href="{{ route('team') }}" class="{{ request()->routeIs('team') ? 'text-white font-bold' : 'text-gray-200' }} text-xl hover:text-white transition">
                 Team
             </a>
-            <a href="{{ route('download') }}" class="{{ request()->routeIs('download') ? 'text-white font-bold' : 'text-gray-200' }} text-xl hover:text-white transition">
-                Download
+            <a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'text-white font-bold' : 'text-gray-200' }} text-xl hover:text-white transition">
+                Contact
             </a>
             
             <a href="#contact" class="inline-flex items-center px-4 py-2 bg-white text-red-600 font-semibold rounded-lg hover:bg-gray-100 transition shadow-lg mt-6">
@@ -140,7 +134,6 @@
 </nav>
 
 <script>
-// Toggle Mobile Menu
 const navToggle = document.getElementById('navToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 
@@ -148,7 +141,6 @@ navToggle.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
 });
 
-// Navbar Scroll Effect - Transparant jadi solid
 const navbar = document.getElementById('navbar');
 
 window.addEventListener('scroll', () => {

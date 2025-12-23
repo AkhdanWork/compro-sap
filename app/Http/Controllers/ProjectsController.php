@@ -6,14 +6,19 @@ use Illuminate\Http\Request;
 use App\Models\HomeContent;
 use App\Models\dModelContent;
 use App\Models\PartnerContent;
+use App\Models\WeddingContent;
+use App\Models\GraphicContent;
 
 class ProjectsController extends Controller
 {
     public function index()
     {
-        $carouselProjectItems = HomeContent::all()->toArray();
+        $carouselProjectItems = HomeContent::all();
+        $carouselPartnerItems = PartnerContent::all();
+        $carouselWeddingItems = WeddingContent::all();
+        $carouselGraphicItems = GraphicContent::all();
+        $carouselModellingItems = dModelContent::all();
 
-        $carouselPartnerItems = PartnerContent::all()->toArray();
         
         // $carouselEventItems = [
         //     [
@@ -90,93 +95,91 @@ class ProjectsController extends Controller
         //     ],
         // ];
 
-        $carouselWeddingItems = [
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaaa',
-                'date' => 'Maret 2024',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
-                'date' => 'Maret 2023',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
-                'date' => 'Maret 2022',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaa',
-                'date' => 'Maret 2021',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaaa',
-                'date' => 'Maret 20241',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
-                'date' => 'Maret 20231',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
-                'date' => 'Maret 20221',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaa',
-                'date' => 'Maret 20211',
-                'image' => asset('img/cover.png')
-            ]
-        ];
+        // $carouselWeddingItems = [
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaaa',
+        //         'date' => 'Maret 2024',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
+        //         'date' => 'Maret 2023',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
+        //         'date' => 'Maret 2022',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaa',
+        //         'date' => 'Maret 2021',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaaa',
+        //         'date' => 'Maret 20241',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
+        //         'date' => 'Maret 20231',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
+        //         'date' => 'Maret 20221',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaa',
+        //         'date' => 'Maret 20211',
+        //         'image' => asset('img/cover.png')
+        //     ]
+        // ];
 
-        $carouselGraphicItems = [
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaaa',
-                'date' => 'Maret 2024',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
-                'date' => 'Maret 2023',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
-                'date' => 'Maret 2022',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaa',
-                'date' => 'Maret 2021',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaaa',
-                'date' => 'Maret 20241',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
-                'date' => 'Maret 20231',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
-                'date' => 'Maret 20221',
-                'image' => asset('img/cover.png')
-            ],
-            [
-                'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaa',
-                'date' => 'Maret 20211',
-                'image' => asset('img/cover.png')
-            ]
-        ];
-
-        $carouselModellingItems = dModelContent::all()->toArray();
+        // $carouselGraphicItems = [
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaaa',
+        //         'date' => 'Maret 2024',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
+        //         'date' => 'Maret 2023',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
+        //         'date' => 'Maret 2022',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaa',
+        //         'date' => 'Maret 2021',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaaa',
+        //         'date' => 'Maret 20241',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
+        //         'date' => 'Maret 20231',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaa',
+        //         'date' => 'Maret 20221',
+        //         'image' => asset('img/cover.png')
+        //     ],
+        //     [
+        //         'title' => 'Peresmian Pelaksanaan Instruksi Presiden Jalan Daerah di Sumatera Utaraaaa',
+        //         'date' => 'Maret 20211',
+        //         'image' => asset('img/cover.png')
+        //     ]
+        // ];
 
         // $carouselPartnerItems = [
         //     [

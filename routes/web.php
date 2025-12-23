@@ -14,23 +14,16 @@ use App\Http\Controllers\Admin\PartnerContentController;
 use App\Http\Controllers\Admin\WeddingContentController;
 use App\Http\Controllers\Admin\GraphicContentController;
 use App\Http\Controllers\Admin\dModelContentController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\ProjectDetailController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/projects', [ProjectsController::class, 'index'])->name('projects');
 Route::get('/services', [ServiceController::class, 'index'])->name('service');
 Route::get('/team', [TeamController::class, 'index'])->name('team');
-Route::get('/download', [DownloadController::class, 'index'])->name('download');
+Route::get('/projects/all', [ProjectDetailController::class, 'index'])->name('projects.all');
+Route::get('/projects/{id}', [ProjectDetailController::class, 'show'])->name('projects.show');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
