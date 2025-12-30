@@ -5,32 +5,32 @@
 
     <div class="relative w-10/12 max-w-5xl mx-auto mb-16">
 
-        <h1 style="line-height:1.25" class="text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-relaxed mb-20">
-            Your Trusted Partner for <br>Professional Event Experiences
+        <h1 style="line-height:1.25" class="text-xl md:text-4xl lg:text-5xl font-medium text-white leading-relaxed mb-12 lg:mb-20">
+            Your Trusted Partner for <br class="hidden lg:inline">Professional Event Experiences
         </h1>
 
         <p class="text-sm md:text-base lg:text-lg text-gray-200 leading-relaxed">
-SAP Enterprise is an Indonesian event and MICE agency specializing in delivering seamless, well-executed <br>events for brands, government institutions, and organizations across Indonesia.
+SAP Enterprise is an Indonesian event and MICE agency specializing in delivering seamless, well-executed <br class="hidden lg:inline">events for brands, government institutions, and organizations across Indonesia.
         </p>
 
     </div>
 
 </section>
 
-<section class="bg-white py-16 lg:py-20">
-    <div class="container w-9/12 mx-auto">
-        <div class="grid lg:grid-cols-3 gap-8 lg:gap-12 items-center">
-            <div class="relative bg-white p-8 lg:p-12 lg:col-span-1">
-                <div class="flex items-center space-x-2 mb-4">
+<section class="bg-white py-12 lg:py-24">
+    <div class="container w-10/12 lg:w-9/12 mx-auto">
+        <div class="grid lg:grid-cols-3 gap-4 lg:gap-12 items-center">
+            <div class="relative bg-white p-4 lg:p-12 lg:col-span-1">
+                <div class="flex items-center space-x-2 mb-2 lg:mb-4">
                     <div class="w-2 h-2 bg-red-600"></div>
                     <p class="text-gray-400 font-semibold text-sm uppercase tracking-wider">CASE STUDY</p>
                 </div>
 
-                <h2 class="text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 leading-tight mb-6">
+                <h2 class="text-2xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 leading-tight mb-6">
                     Behind the Scenes of Our Signature Works
                 </h2>
 
-                <p class="text-sm lg:text-sm text-gray-600 leading-relaxed mb-8">
+                <p class="text-sm lg:text-sm text-gray-600 leading-relaxed mb-4 lg:mb-8">
                     See how we bring strategy, creativity, and technical execution together to deliver impactful event results.
                 </p>
 
@@ -45,7 +45,7 @@ SAP Enterprise is an Indonesian event and MICE agency specializing in delivering
             </div>
 
             <div class="relative rounded-2xl overflow-hidden shadow-2xl group cursor-pointer
-                        h-[400px] lg:h-[800px] lg:col-span-2">
+                        h-[300px] lg:h-[800px] lg:col-span-2">
                 <img src="{{ asset('img/event/alamjadanniv-min.jpg') }}"
                     alt="Event Case Study"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -64,140 +64,124 @@ SAP Enterprise is an Indonesian event and MICE agency specializing in delivering
     </div>
 </section>
 
-<section class="bg-white py-16 lg:py-24" id="categories">
-    <div class="container w-9/12 mx-auto">
-        
-        <div class="text-center mb-12">
-            <div class="flex items-center justify-center space-x-2 mb-4">
+<section class="bg-white py-12 lg:py-24" id="categories">
+    <div class="container w-11/12 lg:w-9/12 mx-auto">
+
+        <div class="text-center mb-6 lg:mb-12">
+            <div class="flex items-center justify-center gap-2 mb-4">
                 <div class="w-2 h-2 bg-red-600"></div>
-                <p class="text-gray-400 font-semibold text-sm uppercase tracking-wider">CATEGORIES</p>
+                <p class="text-gray-400 font-semibold text-sm uppercase tracking-wider">Categories</p>
             </div>
-            <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-4 lg:mb-6">
                 Discover Our Work by Event Type
             </h2>
-            <p class="text-base lg:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+
+            <p class="text-base lg:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4 lg:mb-8">
                 Browse projects across multiple segments to find inspiration tailored to your needs.
             </p>
-            
+
             <div class="relative">
-                <div class="flex items-center justify-center gap-3 overflow-x-auto pb-4 px-16 scrollbar-hide snap-x snap-mandatory">
-                    <button onclick="filterProjects('all')" id="btn-all" class="px-6 py-2 bg-gradient-to-b from-red-400 via-red-500 to-red-600 text-white rounded-full font-semibold hover:bg-red-700 transition whitespace-nowrap snap-start flex-shrink-0">
+                <div class="flex items-center justify-start lg:justify-center gap-3 overflow-x-auto px-4 pb-4 scrollbar-hide snap-x snap-mandatory">
+                    <button onclick="filterProjects('all')"  id="btn-all" class="text-sm lg:text-base px-3 lg:px-6 py-2 bg-gradient-to-b from-red-400 via-red-500 to-red-600 text-white rounded-full font-semibold whitespace-nowrap snap-start">
                         All Projects
                     </button>
-                    <button onclick="filterProjects('event')" id="btn-event" class="px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200 transition whitespace-nowrap snap-start flex-shrink-0">
+                    <button onclick="filterProjects('event')"  id="btn-event" class="text-xs lg:text-base px-3 lg:px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold whitespace-nowrap snap-start">
                         Event Organizer
                     </button>
-                    <button onclick="filterProjects('wedding')" id="btn-wedding" class="px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200 transition whitespace-nowrap snap-start flex-shrink-0">
+                    <button onclick="filterProjects('wedding')"  id="btn-wedding" class="text-xs lg:text-base px-3 lg:px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold whitespace-nowrap snap-start">
                         Wedding
                     </button>
-                    <button onclick="filterProjects('modelling')" id="btn-modelling" class="px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200 transition whitespace-nowrap snap-start flex-shrink-0">
-                        3D Modelling & Rendering
+                    <button onclick="filterProjects('modelling')"  id="btn-modelling" class="text-xs lg:text-base px-3 lg:px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold whitespace-nowrap snap-start">
+                        3D Modelling
                     </button>
-                    <button onclick="filterProjects('graphic')" id="btn-graphic" class="px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200 transition whitespace-nowrap snap-start flex-shrink-0">
+                    <button onclick="filterProjects('graphic')"  id="btn-graphic" class="text-xs lg:text-base px-3 lg:px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold whitespace-nowrap snap-start">
                         Graphic Design
                     </button>
                 </div>
             </div>
         </div>
 
-        <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="projects-container" class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             
             @foreach($carouselProjectItems->take(2) as $item)
             <div class="group cursor-pointer" data-category="event">
-                <div class="relative h-64 rounded-2xl overflow-hidden mb-2 shadow-lg">
-                    <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['title'] }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="relative h-44 sm:h-56 lg:h-64 rounded-2xl overflow-hidden mb-2 shadow-lg">
+                    <img src="{{ asset('storage/'.$item['image']) }}" class="w-full h-full object-cover group-hover:scale-110 transition">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                 </div>
-                    <span class="text-xs font-semibold text-red-600 uppercase tracking-widest">
-                        EVENT ORGANIZER
-                    </span>
-                <h3 class="text-lg font-semibold text-gray-900 mb-1 group-hover:text-red-600 transition">
+                <span class="text-xs font-semibold text-red-600 uppercase tracking-widest">EVENT ORGANIZER</span>
+                <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 group-hover:text-red-600 transition">
                     {{ $item['title'] }}
                 </h3>
-                <p class="text-sm text-gray-600 leading-relaxed">
-                    {{ $item['client'] }} - {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
+                <p class="text-xs sm:text-sm text-gray-600">
+                    {{ $item['client'] }} · {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
                 </p>
             </div>
             @endforeach
 
             @foreach($carouselWeddingItems->take(2) as $item)
             <div class="group cursor-pointer" data-category="wedding">
-                <div class="relative h-64 rounded-2xl overflow-hidden mb-4 shadow-lg">
-                    <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['title'] }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="relative h-44 sm:h-56 lg:h-64 rounded-2xl overflow-hidden mb-2 shadow-lg">
+                    <img src="{{ asset('storage/'.$item['image']) }}" class="w-full h-full object-cover group-hover:scale-110 transition">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                 </div>
-                <div class="mb-3">
-                    <span class="text-xs font-semibold text-red-600 uppercase tracking-wider">
-                        WEDDING
-                    </span>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition">
+                <span class="text-xs font-semibold text-red-600 uppercase tracking-widest">WEDDING</span>
+                <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 group-hover:text-red-600 transition">
                     {{ $item['title'] }}
                 </h3>
-                <p class="text-sm text-gray-600 leading-relaxed">
-                    {{ $item['client'] }} - {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
+                <p class="text-xs sm:text-sm text-gray-600">
+                    {{ $item['client'] }} · {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
                 </p>
             </div>
             @endforeach
 
             @foreach($carouselGraphicItems->take(2) as $item)
             <div class="group cursor-pointer" data-category="graphic">
-                <div class="relative h-64 rounded-2xl overflow-hidden mb-4 shadow-lg">
-                    <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['title'] }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="relative h-44 sm:h-56 lg:h-64 rounded-2xl overflow-hidden mb-2 shadow-lg">
+                    <img src="{{ asset('storage/'.$item['image']) }}" class="w-full h-full object-cover group-hover:scale-110 transition">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                 </div>
-                <div class="mb-3">
-                    <span class="text-xs font-semibold text-red-600 uppercase tracking-wider">
-                        GRAPHIC DESIGN
-                    </span>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition">
+                <span class="text-xs font-semibold text-red-600 uppercase tracking-widest">GRAPHIC DESIGN</span>
+                <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 group-hover:text-red-600 transition">
                     {{ $item['title'] }}
                 </h3>
-                <p class="text-sm text-gray-600 leading-relaxed">
-                    {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
+                <p class="text-xs sm:text-sm text-gray-600">
+                    {{ $item['client'] }} · {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
                 </p>
             </div>
             @endforeach
 
             @foreach($carouselModellingItems->take(2) as $item)
             <div class="group cursor-pointer" data-category="modelling">
-                <div class="relative h-64 rounded-2xl overflow-hidden mb-4 shadow-lg">
-                    <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['title'] }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <<div class="relative h-44 sm:h-56 lg:h-64 rounded-2xl overflow-hidden mb-2 shadow-lg">
+                    <img src="{{ asset('storage/'.$item['image']) }}" class="w-full h-full object-cover group-hover:scale-110 transition">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                 </div>
-                <div class="mb-3">
-                    <span class="text-xs font-semibold text-red-600 uppercase tracking-wider">
-                        3D MODELLING & RENDERING
-                    </span>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition">
+                <span class="text-xs font-semibold text-red-600 uppercase tracking-widest">3D MODELLING & RENDERING</span>
+                <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 group-hover:text-red-600 transition">
                     {{ $item['title'] }}
                 </h3>
-                <p class="text-sm text-gray-600 leading-relaxed">
-                    {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
+                <p class="text-xs sm:text-sm text-gray-600">
+                    {{ $item['client'] }} · {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
                 </p>
             </div>
             @endforeach
 
             <div id="event-projects" class="hidden col-span-full">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                     @foreach($carouselProjectItems as $item)
                     <div class="group cursor-pointer">
-                        <div class="relative h-64 rounded-2xl overflow-hidden mb-4 shadow-lg">
-                            <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['title'] }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="relative h-44 sm:h-56 lg:h-64 rounded-2xl overflow-hidden mb-2 shadow-lg">
+                            <img src="{{ asset('storage/'.$item['image']) }}" class="w-full h-full object-cover group-hover:scale-110 transition">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                         </div>
-                        <div class="mb-3">
-                            <span class="text-xs font-semibold text-red-600 uppercase tracking-wider">
-                                EVENT ORGANIZER
-                            </span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition">
+                        <span class="text-xs font-semibold text-red-600 uppercase tracking-widest">EVENT ORGANIZER</span>
+                        <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 group-hover:text-red-600 transition">
                             {{ $item['title'] }}
                         </h3>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            {{ $item['client'] }} - {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
+                        <p class="text-xs sm:text-sm text-gray-600">
+                            {{ $item['client'] }} · {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
                         </p>
                     </div>
                     @endforeach
@@ -205,23 +189,19 @@ SAP Enterprise is an Indonesian event and MICE agency specializing in delivering
             </div>
 
             <div id="wedding-projects" class="hidden col-span-full">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                     @foreach($carouselWeddingItems as $item)
                     <div class="group cursor-pointer">
-                        <div class="relative h-64 rounded-2xl overflow-hidden mb-4 shadow-lg">
-                            <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['title'] }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="relative h-44 sm:h-56 lg:h-64 rounded-2xl overflow-hidden mb-2 shadow-lg">
+                            <img src="{{ asset('storage/'.$item['image']) }}" class="w-full h-full object-cover group-hover:scale-110 transition">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                         </div>
-                        <div class="mb-3">
-                            <span class="text-xs font-semibold text-red-600 uppercase tracking-wider">
-                                WEDDING
-                            </span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition">
+                        <span class="text-xs font-semibold text-red-600 uppercase tracking-widest">WEDDING</span>
+                        <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 group-hover:text-red-600 transition">
                             {{ $item['title'] }}
                         </h3>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            {{ $item['client'] }} - {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
+                        <p class="text-xs sm:text-sm text-gray-600">
+                            {{ $item['client'] }} · {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
                         </p>
                     </div>
                     @endforeach
@@ -229,23 +209,19 @@ SAP Enterprise is an Indonesian event and MICE agency specializing in delivering
             </div>
 
             <div id="modelling-projects" class="hidden col-span-full">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                     @foreach($carouselModellingItems as $item)
                     <div class="group cursor-pointer">
-                        <div class="relative h-64 rounded-2xl overflow-hidden mb-4 shadow-lg">
-                            <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['title'] }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="relative h-44 sm:h-56 lg:h-64 rounded-2xl overflow-hidden mb-2 shadow-lg">
+                            <img src="{{ asset('storage/'.$item['image']) }}" class="w-full h-full object-cover group-hover:scale-110 transition">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                         </div>
-                        <div class="mb-3">
-                            <span class="text-xs font-semibold text-red-600 uppercase tracking-wider">
-                                3D MODELLING & RENDERING
-                            </span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition">
+                        <span class="text-xs font-semibold text-red-600 uppercase tracking-widest">3D MODELING & RENDERING</span>
+                        <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 group-hover:text-red-600 transition">
                             {{ $item['title'] }}
                         </h3>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
+                        <p class="text-xs sm:text-sm text-gray-600">
+                            {{ $item['client'] }} · {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
                         </p>
                     </div>
                     @endforeach
@@ -253,23 +229,19 @@ SAP Enterprise is an Indonesian event and MICE agency specializing in delivering
             </div>
 
             <div id="graphic-projects" class="hidden col-span-full">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                     @foreach($carouselGraphicItems as $item)
                     <div class="group cursor-pointer">
-                        <div class="relative h-64 rounded-2xl overflow-hidden mb-4 shadow-lg">
-                            <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['title'] }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="relative h-44 sm:h-56 lg:h-64 rounded-2xl overflow-hidden mb-2 shadow-lg">
+                            <img src="{{ asset('storage/'.$item['image']) }}" class="w-full h-full object-cover group-hover:scale-110 transition">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                         </div>
-                        <div class="mb-3">
-                            <span class="text-xs font-semibold text-red-600 uppercase tracking-wider">
-                                GRAPHIC DESIGN
-                            </span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition">
+                        <span class="text-xs font-semibold text-red-600 uppercase tracking-widest">GRAPHIC DESIGN</span>
+                        <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 group-hover:text-red-600 transition">
                             {{ $item['title'] }}
                         </h3>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
+                        <p class="text-xs sm:text-sm text-gray-600">
+                            {{ $item['client'] }} · {{ \Carbon\Carbon::parse($item['date'])->format('M Y') }}
                         </p>
                     </div>
                     @endforeach
@@ -278,40 +250,42 @@ SAP Enterprise is an Indonesian event and MICE agency specializing in delivering
 
         </div>
 
-        <div class="text-center mt-12">
-            <a href="{{ route('projects.all') }}" class="inline-flex items-center px-8 py-3 border-2 border-red-600 text-red-600 font-semibold rounded-full hover:bg-red-600 hover:text-white transition-all duration-300">
+        <div class="text-center mt-6 lg:mt-12">
+            <a href="{{ route('projects.all') }}" class="inline-flex items-center px-4 lg:px-8 py-2 lg:py-3 border-2 border-red-600 text-red-600 font-semibold rounded-full hover:bg-red-600 hover:text-white transition">
                 See More
                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"></path>
                 </svg>
             </a>
         </div>
+
     </div>
 </section>
 
+
 <section class="bg-gray-50 py-16 lg:py-24" id="gallery">
     <div class="container w-9/12 mx-auto">
-                <div class="grid lg:grid-cols-10 gap-8 lg:gap-12 mb-12 items-start">
+                <div class="grid lg:grid-cols-10 gap-8 lg:gap-12 mb-6 lg:mb-12 items-start">
             <div class="lg:col-span-5">
                 <div class="flex items-center space-x-2">
                     <div class="w-1 h-1 p-1 bg-red-600"></div>
                     <p class="text-gray-400 font-semibold text-sm uppercase tracking-widest">GALLERY</p>
                 </div>
 
-                <h2 class="text-3xl lg:text-4xl font-semibold text-gray-900 leading-tight mt-2">
+                <h2 class="text-2xl lg:text-4xl font-semibold text-gray-900 leading-tight mt-2">
                     A Visual Showcase of Our Work
                 </h2>
             </div>
 
             <div class="lg:col-span-5 flex flex-col h-full justify-end items-end">
-                <p class="text-xs lg:text-xs text-gray-600 leading-relaxed text-right">
+                <p class="text-xs lg:text-xs text-gray-600 leading-relaxed text-left lg:text-right">
                     Explore highlights from the events we've crafted — from corporate gatherings 
                     and government programs to weddings and brand activations. Every photo 
                     reflects our commitment to detail, creativity, and seamless execution.
                 </p>
             </div>
         </div>
-        <div class="relative h-[500px] md:h-[550px] flex items-center justify-center mb-16" style="perspective: 2500px;">
+        <div class="relative h-[500px] md:h-[550px] flex items-center justify-center mb:8 lg:mb-16" style="perspective: 2500px;">
             <button
                 onclick="coverflowPrev()"
                 class="absolute left-4 z-50 w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-lg hover:bg-red-600 hover:text-white transition-all duration-300">
@@ -481,10 +455,10 @@ SAP Enterprise is an Indonesian event and MICE agency specializing in delivering
 </section>
 
 <section class="w-full py-12 px-6 bg-white">
-    <div class="w-10/12 mx-auto">
-        <div class="rounded-3xl bg-gradient-to-b from-red-400 via-red-500 to-red-600 text-center py-20 px-6">
+    <div class="w-11/12 lg:w-10/12 mx-auto">
+        <div class="rounded-3xl bg-gradient-to-b from-red-400 via-red-500 to-red-600 text-center py-8 lg:py-20 px-4 lg:px-6">
 
-            <h2 class="text-3xl lg:text-5xl font-medium text-white mb-4">
+            <h2 class="text-2xl lg:text-5xl font-medium text-white mb-4">
                 Ready to Create an Impactful Event?
             </h2>
 
@@ -493,17 +467,16 @@ SAP Enterprise is an Indonesian event and MICE agency specializing in delivering
             </p>
 
             <a href="#"
-               class="inline-flex items-center gap-2 bg-white text-red-600 font-semibold py-3 px-6 rounded-full shadow-md hover:bg-gray-100 transition">
+               class="inline-flex items-center gap-2 bg-white text-red-600 font-semibold py-1.5 lg:py-3 px-3 lg:px-6 rounded-full shadow-md hover:bg-gray-100 transition">
                 Start Your Project
-                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"></path>
-                </svg>
+                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"></path>
+                        </svg>
             </a>
 
         </div>
     </div>
 </section>
-
 
 <script>
     document.querySelectorAll('.faq-item').forEach((item) => {

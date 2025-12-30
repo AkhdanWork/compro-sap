@@ -7,17 +7,21 @@ export default {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        './src/**/*.{js,ts,jsx,tsx}'
     ],
-
     theme: {
+        screens: {
+            'sm': '576px',
+            'md': '960px',
+            'lg': '1440px',
+        },
         extend: {
             fontFamily: {
-                // sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 'sans': ['Manrope', 'sans-serif'],
                 'manrope': ['Manrope', 'sans-serif'],
             },
         },
     },
-
+    
     plugins: [forms],
 };

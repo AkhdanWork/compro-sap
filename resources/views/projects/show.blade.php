@@ -31,7 +31,7 @@
                     </span>
                 </div>
                 
-                <h1 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-6">
                     {{ $project->title }}
                 </h1>
 
