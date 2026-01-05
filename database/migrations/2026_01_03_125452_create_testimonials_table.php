@@ -6,27 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('graphic_contents', function (Blueprint $table) {
+        Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('client');
-            $table->date('date');
+            $table->text('quote');
+            $table->string('name');
+            $table->string('position');
+            $table->string('company');
             $table->string('image')->nullable();
-            $table->text('description');
+            $table->integer('order')->unique();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('graphic_contents');
+        Schema::dropIfExists('testimonials');
     }
 };

@@ -5,7 +5,7 @@
 
     <div class="relative w-10/12 max-w-5xl mx-auto mb-16">
 
-        <h1 style="line-height:1.25" class="text-xl md:text-4xl lg:text-5xl font-medium text-white leading-relaxed mb-12 lg:mb-20">
+        <h1 style="line-height:1.25" class="text-2xl md:text-4xl lg:text-5xl font-semibold text-white leading-relaxed mb-12 lg:mb-20">
             Let’s Bring Your Next Event to Life
         </h1>
 
@@ -16,7 +16,7 @@
     </div>
 </section>
 
-<section class="bg-white py-12 lg:py-24">
+<section class="bg-white py-12 lg:py-24" id="contact">
     <div class="container w-10/12 mx-auto">
         <div class="grid lg:grid-cols-5 gap-8 lg:gap-10">
             

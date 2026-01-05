@@ -26,7 +26,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="antialiased">
-    @include('layouts.navbar')
+        <div id="notification-container" class="fixed top-20 right-4 z-50 space-y-3"></div>
+        @include('layouts.navbar')
         <!-- Page Heading -->
         @if (isset($header))
             <header class="bg-white shadow">
@@ -40,6 +41,58 @@
         <main>
         {{ $slot }}
         </main>
-        @include('components.footer')
+        <x-footer />
     </body>
+
+    <script>
+        function showNotification(message, type = 'success') {
+            const container = document.getElementById('notification-container') 
+                || document.body;
+
+            const notification = document.createElement('div');
+
+            const styles = {
+                success: {
+                    bg: 'bg-green-500',
+                    icon: 'check-circle'
+                },
+                error: {
+                    bg: 'bg-red-500',
+                    icon: 'x-circle'
+                },
+                info: {
+                    bg: 'bg-blue-500',
+                    icon: 'info-circle'
+                }
+            };
+
+            const config = styles[type] || styles.success;
+
+            notification.className = `
+                flex items-center gap-3 px-6 py-4 rounded-lg shadow-lg text-white
+                ${config.bg}
+                transform translate-x-full opacity-0
+                transition-all duration-300 ease-out
+            `;
+
+            notification.innerHTML = `
+                <i class="bi bi-${config.icon} text-xl"></i>
+                <span class="text-sm font-medium">${message}</span>
+            `;
+
+            container.appendChild(notification);
+
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full', 'opacity-0');
+            }, 50);
+
+            // Animate out
+            setTimeout(() => {
+                notification.classList.add('translate-x-full', 'opacity-0');
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+    </script>
+
 </html>

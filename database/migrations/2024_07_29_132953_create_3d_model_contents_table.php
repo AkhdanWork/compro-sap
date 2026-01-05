@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('client');
             $table->date('date');
             $table->string('image')->nullable();
+            $table->text('description');
             $table->timestamps();
         });
     }

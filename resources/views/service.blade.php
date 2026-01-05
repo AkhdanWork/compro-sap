@@ -5,8 +5,8 @@
 
     <div class="relative w-10/12 max-w-5xl mx-auto mb-16">
 
-        <h1 style="line-height:1.25" class="text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight mb-20">
-            End-to-End Event Solutions<br>
+        <h1 style="line-height:1.25" class="text-2xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight mb-12 lg:mb-20">
+            End-to-End Event Solutions<br class="hidden lg:inline">
             Tailored to Your Needs
         </h1>
 
@@ -215,7 +215,7 @@
                     and client satisfaction.
                 </p>
 
-                <a href="#contact"
+                <a href="{{ route('contact') }}#contact"
                 class="inline-flex items-center gap-2
                         px-4 sm:px-5 py-2 sm:py-3
                         bg-red-600 text-white
@@ -472,7 +472,7 @@
                 Let’s bring your vision to life with professional planning, creative storytelling, and seamless execution from our dedicated team.
             </p>
 
-            <a href="#"
+            <a href="{{ route('contact') }}#contact"
                class="inline-flex items-center gap-2 bg-white text-red-600 font-semibold py-1.5 lg:py-3 px-3 lg:px-6 rounded-full shadow-md hover:bg-gray-100 transition">
                 Start Your Project
                         <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

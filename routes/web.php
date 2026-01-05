@@ -9,12 +9,14 @@ use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ProjectDetailController;
 use App\Http\Controllers\Admin\HomeContentController;
 use App\Http\Controllers\Admin\PartnerContentController;
 use App\Http\Controllers\Admin\WeddingContentController;
 use App\Http\Controllers\Admin\GraphicContentController;
 use App\Http\Controllers\Admin\dModelContentController;
-use App\Http\Controllers\ProjectDetailController;
+use App\Http\Controllers\Admin\TestimonialContentController;
+use App\Http\Controllers\Admin\TeamContentController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
@@ -22,7 +24,7 @@ Route::get('/projects', [ProjectsController::class, 'index'])->name('projects');
 Route::get('/services', [ServiceController::class, 'index'])->name('service');
 Route::get('/team', [TeamController::class, 'index'])->name('team');
 Route::get('/projects/all', [ProjectDetailController::class, 'index'])->name('projects.all');
-Route::get('/projects/{id}', [ProjectDetailController::class, 'show'])->name('projects.show');
+Route::get('/projects/{type}/{id}', [ProjectDetailController::class, 'show'])->name('projects.show');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::get('/dashboard', function () {
@@ -43,6 +45,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('partner/{partnerContent}/edit', [PartnerContentController::class, 'edit'])->name('partner.edit');
     Route::put('partner/{partnerContent}', [PartnerContentController::class, 'update'])->name('partner.update');
     Route::delete('partner/{partnerContent}', [PartnerContentController::class, 'destroy'])->name('partner.destroy');
+    Route::post('partner/update-order', [PartnerContentController::class, 'updateOrder'])->name('partner.updateOrder');
 
     Route::get('wedding', [WeddingContentController::class, 'index'])->name('wedding.index');
     Route::get('wedding/create', [WeddingContentController::class, 'create'])->name('wedding.create');
@@ -64,6 +67,22 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('dmodel/{dmodelContent}/edit', [dModelContentController::class, 'edit'])->name('dmodel.edit');
     Route::put('dmodel/{dmodelContent}', [dModelContentController::class, 'update'])->name('dmodel.update');
     Route::delete('dmodel/{dmodelContent}', [dModelContentController::class, 'destroy'])->name('dmodel.destroy');
+    
+    Route::get('testimonial', [TestimonialContentController::class, 'index'])->name('testimonial.index');
+    Route::get('testimonial/create', [TestimonialContentController::class, 'create'])->name('testimonial.create');
+    Route::post('testimonial', [TestimonialContentController::class, 'store'])->name('testimonial.store');
+    Route::get('testimonial/{testimonial}/edit', [TestimonialContentController::class, 'edit'])->name('testimonial.edit');
+    Route::put('testimonial/{testimonial}', [TestimonialContentController::class, 'update'])->name('testimonial.update');
+    Route::delete('testimonial/{testimonial}', [TestimonialContentController::class, 'destroy'])->name('testimonial.destroy');
+    Route::post('testimonial/update-order', [TestimonialContentController::class, 'updateOrder'])->name('testimonial.updateOrder');
+    
+    Route::get('team', [TeamContentController::class, 'index'])->name('team.index');
+    Route::get('team/create', [TeamContentController::class, 'create'])->name('team.create');
+    Route::post('team', [TeamContentController::class, 'store'])->name('team.store');
+    Route::get('team/{team}/edit', [TeamContentController::class, 'edit'])->name('team.edit');
+    Route::put('team/{team}', [TeamContentController::class, 'update'])->name('team.update');
+    Route::delete('team/{team}', [TeamContentController::class, 'destroy'])->name('team.destroy');
+    Route::post('team/update-order', [TeamContentController::class, 'updateOrder'])->name('team.updateOrder');
 });
 
 
@@ -71,6 +90,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/profile/social-media', [ProfileController::class, 'storeSocialMedia'])->name('profile.social-media.store');
+    Route::put('/profile/social-media/{socialMedia}', [ProfileController::class, 'updateSocialMedia'])->name('profile.social-media.update');
+    Route::delete('/profile/social-media/{socialMedia}', [ProfileController::class, 'destroySocialMedia'])->name('profile.social-media.destroy');
     Route::put('/password', [ProfileController::class, 'updatePassword'])->name('password.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });

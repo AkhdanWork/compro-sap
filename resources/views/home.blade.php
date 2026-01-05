@@ -16,7 +16,7 @@
                 </p>
 
                 <div class="flex flex-row gap-4">
-                    <a href="#contact" class="group inline-flex items-center justify-center px-3 lg:px-4 py-1 lg:py-2 bg-red text-white font-medium lg:font-bold text-sm lg:text-base rounded-full hover:bg-white hover:text-red-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <a href="{{ route('contact') }}" class="group inline-flex items-center justify-center px-3 lg:px-4 py-1 lg:py-2 bg-red text-white font-medium lg:font-bold text-sm lg:text-base rounded-full hover:bg-white hover:text-red-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                         <span class="hidden lg:inline">Start Your Project</span>
                         <span class="lg:hidden">Start Project</span>
                         <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,47 +38,73 @@
     </div>
 </section>
 
-<section>
-  <div class="bg-white pt-6" id="partners">
-    <div class="container   w-10/12 lg:w-9/12 mx-auto wow fadeInDown">
-      <h5 class="text-lg lg:text-2xl text-center text-black font-bold wow fadeInTop">Trusted by Leading Brands and Institutions</h5>
-      <div id="default-carousel" class="container mx-auto pt-6" data-carousel="slide">
-        <div class="relative h-20 lg:h-48 overflow-hidden rounded-lg">
-          <div class="block lg:hidden">
-                @foreach (array_chunk($carouselPartnerItems, 4) as $carouselChunk)
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="grid grid-cols-4 gap-4">
-                        @foreach ($carouselChunk as $item)
-                        <div class="flex justify-center items-center">
-                            <img
-                            src="{{ asset('storage/' . $item['image']) }}"
-                            alt="{{ $item['title'] }}"
-                            class="h-10 object-contain"
-                            >
-                        </div>
-                        @endforeach
-                    </div>
-                    </div>
-                @endforeach
-          </div>
-        <div class="hidden lg:block">
-        @foreach (array_chunk($carouselPartnerItems, 8) as $carouselChunk)
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <div class="grid grid-cols-8 gap-6">
-                @foreach ($carouselChunk as $item)
-                <div class="flex justify-center items-center">
-                    <img
+<section id="partners">
+  <div class="bg-white py-8 lg:py-12">
+    <div class="container w-10/12 lg:w-9/12 mx-auto">
+      <h5 class="text-lg lg:text-2xl text-center text-black font-bold mb-8 lg:mb-12">
+        Trusted by Leading Brands and Institutions
+      </h5>
+      
+      <!-- Infinite Scroll Container -->
+      <div class="relative overflow-hidden">
+        <!-- Mobile Version (4 items visible) -->
+        <div class="block lg:hidden">
+          <div class="flex animate-scroll-mobile">
+            <!-- First Set -->
+            @foreach ($carouselPartnerItems as $item)
+              <div class="flex-shrink-0 w-1/4 px-2">
+                <div class="flex justify-center items-center h-16">
+                  <img
                     src="{{ asset('storage/' . $item['image']) }}"
                     alt="{{ $item['title'] }}"
-                    class="h-16 object-contain"
-                    >
+                    class="h-10 object-contain grayscale-0 hover:grayscale transition-all duration-300"
+                  >
                 </div>
-                @endforeach
-            </div>
-            </div>
-        @endforeach
+              </div>
+            @endforeach
+            <!-- Duplicate Set for Seamless Loop -->
+            @foreach ($carouselPartnerItems as $item)
+              <div class="flex-shrink-0 w-1/4 px-2">
+                <div class="flex justify-center items-center h-16">
+                  <img
+                    src="{{ asset('storage/' . $item['image']) }}"
+                    alt="{{ $item['title'] }}"
+                    class="h-10 object-contain grayscale-0 hover:grayscale transition-all duration-300"
+                  >
+                </div>
+              </div>
+            @endforeach
+          </div>
         </div>
 
+        <!-- Desktop Version (8 items visible) -->
+        <div class="hidden lg:block">
+          <div class="flex animate-scroll-desktop">
+            <!-- First Set -->
+            @foreach ($carouselPartnerItems as $item)
+              <div class="flex-shrink-0 w-1/8 px-4">
+                <div class="flex justify-center items-center h-24">
+                  <img
+                    src="{{ asset('storage/' . $item['image']) }}"
+                    alt="{{ $item['title'] }}"
+                    class="h-16 object-contain grayscale-0 hover:grayscale transition-all duration-300"
+                  >
+                </div>
+              </div>
+            @endforeach
+            <!-- Duplicate Set for Seamless Loop -->
+            @foreach ($carouselPartnerItems as $item)
+              <div class="flex-shrink-0 w-1/8 px-4">
+                <div class="flex justify-center items-center h-24">
+                  <img
+                    src="{{ asset('storage/' . $item['image']) }}"
+                    alt="{{ $item['title'] }}"
+                    class="h-16 object-contain grayscale-0 hover:grayscale transition-all duration-300"
+                  >
+                </div>
+              </div>
+            @endforeach
+          </div>
         </div>
       </div>
     </div>
@@ -451,7 +477,7 @@
                     and client satisfaction.
                 </p>
 
-                <a href="#contact"
+                <a href="{{ route('contact') }}#contact"
                 class="inline-flex items-center gap-2
                         px-4 sm:px-5 py-2 sm:py-3
                         bg-red-600 text-white
@@ -583,7 +609,7 @@
         </div>
 
         <div class="flex justify-center mt-6 lg:mt-12">
-            <a href="#projects"
+            <a href="{{ route('projects') }}"
                class="inline-flex items-center gap-2 px-6 sm:px-8 py-3
                       border-2 border-red-600 text-red-600
                       font-semibold text-sm sm:text-base rounded-full
@@ -606,6 +632,7 @@
             <div class="relative overflow-hidden">
                 <div class="testimonial-slides flex transition-transform duration-500 ease-in-out">
 
+                    @forelse($testimonials as $testimonial)
                     <div class="testimonial-slide min-w-full">
                         <div class="rounded-3xl px-6 py-10 sm:p-10 lg:p-16 text-white relative">
 
@@ -616,92 +643,107 @@
                             </div>
 
                             <p class="text-lg sm:text-xl lg:text-4xl font-semibold leading-relaxed mb-10 max-w-full lg:max-w-3xl">
-                                SAP Enterprise delivered an exceptionally well-executed event. Their team handled
-                                everything smoothly, from planning to on-site coordination.
+                                {{ $testimonial->quote }}
                             </p>
 
                             <div class="flex items-center gap-4 mt-8">
-                                <img src="{{ asset('img/team/team4.jpg') }}" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover">
+                                @if($testimonial->image)
+                                    <img src="{{ asset('storage/' . $testimonial->image) }}" 
+                                         alt="{{ $testimonial->name }}" 
+                                         class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover">
+                                @else
+                                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 flex items-center justify-center">
+                                        <i class="bi bi-person text-white text-xl"></i>
+                                    </div>
+                                @endif
                                 <div>
-                                    <p class="font-semibold text-sm sm:text-base">Jonathan Pratama</p>
+                                    <p class="font-semibold text-sm sm:text-base">{{ $testimonial->name }}</p>
                                     <p class="text-xs sm:text-sm opacity-80 leading-snug">
-                                        Corporate Communications Manager, Tokopedia
+                                        {{ $testimonial->position }}, {{ $testimonial->company }}
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    @empty
+                    <!-- Fallback jika belum ada testimonial -->
                     <div class="testimonial-slide min-w-full">
-                        <div class="rounded-3xl px-6 py-10 sm:p-10 lg:p-16 text-white relative">
-
-                            <div class="mb-6 opacity-90 w-8 h-8 sm:w-10 sm:h-10">
+                        <div class="rounded-3xl px-6 py-10 sm:p-10 lg:p-16 text-white relative text-center">
+                            <div class="mb-6 opacity-90 w-8 h-8 sm:w-10 sm:h-10 mx-auto">
                                 <svg fill="#ffffff" viewBox="0 0 8 8">
                                     <path d="M0 0v3h2c0 1.11-.89 2-2 2v1c1.65 0 3-1.35 3-3v-3h-3zm5 0v3h2c0 1.11-.89 2-2 2v1c1.65 0 3-1.35 3-3v-3h-3z" transform="translate(0 1)"/>
                                 </svg>
                             </div>
-
-                            <p class="text-lg sm:text-xl lg:text-4xl font-semibold leading-relaxed mb-10 max-w-full lg:max-w-3xl">
-                                Professional team with excellent attention to detail. Our government event ran perfectly.
+                            <p class="text-lg sm:text-xl lg:text-3xl font-semibold leading-relaxed">
+                                No testimonials available yet.
                             </p>
-
-                            <div class="flex items-center gap-4 mt-8">
-                                <img src="{{ asset('img/team/team.jpg') }}" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover">
-                                <div>
-                                    <p class="font-semibold text-sm sm:text-base">Sarah Wijaya</p>
-                                    <p class="text-xs sm:text-sm opacity-80 leading-snug">
-                                        Event Director, Ministry of PUPR
-                                    </p>
-                                </div>
-                            </div>
                         </div>
                     </div>
-
-                    <div class="testimonial-slide min-w-full">
-                        <div class="rounded-3xl px-6 py-10 sm:p-10 lg:p-16 text-white relative">
-
-                            <div class="mb-6 opacity-90 w-8 h-8 sm:w-10 sm:h-10">
-                                <svg fill="#ffffff" viewBox="0 0 8 8">
-                                    <path d="M0 0v3h2c0 1.11-.89 2-2 2v1c1.65 0 3-1.35 3-3v-3h-3zm5 0v3h2c0 1.11-.89 2-2 2v1c1.65 0 3-1.35 3-3v-3h-3z" transform="translate(0 1)"/>
-                                </svg>
-                            </div>
-
-                            <p class="text-lg sm:text-xl lg:text-4xl font-semibold leading-relaxed mb-10 max-w-full lg:max-w-3xl">
-                                The 3D rendering and creative design were outstanding. SAP Enterprise brought our vision to life.
-                            </p>
-
-                            <div class="flex items-center gap-4 mt-8">
-                                <img src="{{ asset('img/event/wedding.jpg') }}" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover">
-                                <div>
-                                    <p class="font-semibold text-sm sm:text-base">Andi Kusuma</p>
-                                    <p class="text-xs sm:text-sm opacity-80 leading-snug">
-                                        Marketing Director, Unilever Indonesia
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforelse
 
                 </div>
             </div>
 
+            <!-- Navigation Buttons - Only show if there are testimonials -->
+            @if($testimonials->count() > 1)
             <div class="absolute bottom-6 right-4 sm:bottom-10 sm:right-10 flex items-center gap-3 z-20">
                 <button id="prev-btn" class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/30 hover:bg-white/40 transition">
-                    <svg viewBox="0 0 24 24" stroke="white">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="white">
                         <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
 
                 <button id="next-btn" class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/30 hover:bg-white/40 transition">
-                    <svg viewBox="0 0 24 24" stroke="white">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="white">
                         <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
             </div>
+            @endif
 
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelector('.testimonial-slides');
+    const slideElements = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    
+    const totalSlides = slideElements.length;
+    
+    // Only run carousel if there's more than 1 slide
+    if (totalSlides <= 1) return;
+    
+    let currentSlide = 0;
+
+    function updateSlide() {
+        slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            currentSlide = (currentSlide === 0) ? totalSlides - 1 : currentSlide - 1;
+            updateSlide();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            currentSlide = (currentSlide === totalSlides - 1) ? 0 : currentSlide + 1;
+            updateSlide();
+        });
+    }
+
+    // Auto slide every 5 seconds
+    setInterval(function() {
+        currentSlide = (currentSlide === totalSlides - 1) ? 0 : currentSlide + 1;
+        updateSlide();
+    }, 5000);
+});
+</script>
 
 <section id="faq" class="w-full py-12 lg:py-24 px-6 bg-white" id="faqs">
     <div class="w-full mx-auto text-center inline-flex flex-col items-center">
@@ -823,12 +865,12 @@
                 Let’s bring your vision to life with professional planning, creative storytelling, and seamless execution from our dedicated team.
             </p>
 
-            <a href="#"
+            <a href="{{ route('contact') }}#contact"
                class="inline-flex items-center gap-2 bg-white text-red-600 font-semibold py-1.5 lg:py-3 px-3 lg:px-6 rounded-full shadow-md hover:bg-gray-100 transition">
                 Start Your Project
-                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"></path>
-                        </svg>
+                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"></path>
+                </svg>
             </a>
 
         </div>

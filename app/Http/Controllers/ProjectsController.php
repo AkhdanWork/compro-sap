@@ -11,14 +11,47 @@ use App\Models\GraphicContent;
 
 class ProjectsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $carouselProjectItems = HomeContent::all();
+        $carouselProjectItems = HomeContent::orderBy('date', 'desc')->get();
         $carouselPartnerItems = PartnerContent::all();
-        $carouselWeddingItems = WeddingContent::all();
-        $carouselGraphicItems = GraphicContent::all();
-        $carouselModellingItems = dModelContent::all();
+        $carouselWeddingItems = WeddingContent::orderBy('date', 'desc')->get();
+        $carouselGraphicItems = GraphicContent::orderBy('date', 'desc')->get();
+        $carouselModellingItems = dModelContent::orderBy('date', 'desc')->get();
+        
+        $category = $request->get('category', 'all');
+        $projects = collect();
+        if ($category === 'all' || $category === 'event') {
+            $events = HomeContent::all()->map(function($item) {
+                $item->category = 'Corporate Event';
+                return $item;
+            });
+            $projects = $projects->merge($events);
+        }
 
+        if ($category === 'all' || $category === 'wedding') {
+            $weddings = WeddingContent::all()->map(function($item) {
+                $item->category = 'Wedding';
+                return $item;
+            });
+            $projects = $projects->merge($weddings);
+        }
+
+        if ($category === 'all' || $category === 'modelling') {
+            $modellings = dModelContent::all()->map(function($item) {
+                $item->category = '3D Modelling & Rendering';
+                return $item;
+            });
+            $projects = $projects->merge($modellings);
+        }
+
+        if ($category === 'all' || $category === 'graphic') {
+            $graphics = GraphicContent::all()->map(function($item) {
+                $item->category = 'Graphic Design';
+                return $item;
+            });
+            $projects = $projects->merge($graphics);
+        }
         
         // $carouselEventItems = [
         //     [
@@ -268,6 +301,7 @@ class ProjectsController extends Controller
         //     ],
         // ];
 
-        return view('projects', compact('carouselProjectItems','carouselWeddingItems','carouselGraphicItems','carouselModellingItems','carouselPartnerItems'));
+        return view('projects', compact('carouselProjectItems','carouselWeddingItems','carouselGraphicItems','carouselModellingItems','carouselPartnerItems', 'projects'));
     }
+
 }

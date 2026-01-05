@@ -2,12 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Set Manrope sebagai default font */
-body {
-    font-family: 'Manrope', sans-serif;
+
+#navbar {
+    overflow: visible !important;
 }
 
-/* Atau apply ke semua element */
+body {
+    font-family: 'Manrope', sans-serif;
+    overflow-x: hidden;
+}
+
 * {
     font-family: 'Manrope', sans-serif;
+}
+@keyframes scroll-mobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-mobile {
+  animation: scroll-mobile 3s linear infinite;
+}
+
+.animate-scroll-mobile:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-desktop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-desktop {
+  animation: scroll-desktop 5s linear infinite;
+}
+
+.animate-scroll-desktop:hover {
+  animation-play-state: paused;
+}
+
+.w-1\/8 {
+  width: 12.5%;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
